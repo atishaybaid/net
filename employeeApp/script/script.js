@@ -16,18 +16,13 @@ employeeApp.controller('mainController',function($scope,$http){
 		var userType = $scope.userType;
 
 		console.log(fName,mName,lName,email,location,skill,title,department,userType);
+    };
 
-		$http.post('/check.json', {msg:'hello word!'}).
-  success(function(data, status, headers, config) {
-    // this callback will be called asynchronously
-    // when the response is available
-  }).
-  error(function(data, status, headers, config) {
-    // called asynchronously if an error occurs
-    // or server returns response with an error status.
-  });
 
-	};
+	$http.get('script/data.json').success(function(data){
+          $scope.countries = data;
+    	  console.log($scope.countries);
+    });	  
 
 
 

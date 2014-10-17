@@ -1,0 +1,27 @@
+<!DOCTYPE html data-ng-app="jsonApp">
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title> </title>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript">
+
+	console.log("outside");
+	var jsonApp = angular.module('jsonApp', []);
+      jsonApp.controller('CountryCtrl', function ($scope, $http){
+      	console.log("inside CountryCtrl");
+        $http.get('data.json').success(function(data) {
+          $scope.countries = data;
+          console.log($scope.countries);
+        });
+      });
+
+
+	</script>
+
+
+</head>
+<body ng-controller = "CountryCtrl">
+
+</body>
+</html>
