@@ -1,29 +1,43 @@
+
 var employeeApp = angular.module("employeeApp",[]);
 
-employeeApp.controller('mainController',function($scope,$http){
+employeeApp.factory('employeeAppFactory', function employeeAppFactory(x){
+
+	console.log("inside factory");
+	var factory ={};
+
+	factory.display = function(){
+		console.log("inside display");
+	};
+
+	console.log(factory);
+	console.log(x);
+	
+	return factory;
+
+});
+
+
+
+employeeApp.controller('mainController',function($scope,employeeAppFactory){
 	console.log("inside controller");
+	console.log(employeeAppFactory);
+
+	employeeAppFactory.display();
 
 	$scope.addData = function(){
-		console.log("inside getData");
+
 		var fName = $scope.fName;
 		var mName = $scope.mName;
-		var lName =	$scope.lName;
-		var email = $scope.email;
+		var lName = $scope.lName;
 		var location = $scope.location;
-		var skill = $scope.skill;
 		var title = $scope.title;
 		var department = $scope.department;
 		var userType = $scope.userType;
 
-		console.log(fName,mName,lName,email,location,skill,title,department,userType);
-    };
+		var newEmployee =  new employeeAppFactory("HEY")
 
-
-	$http.get('script/data.json').success(function(data){
-          $scope.countries = data;
-    	  console.log($scope.countries);
-    });	  
-
+	}
 
 
 });
