@@ -1,32 +1,41 @@
 
-var employeeApp = angular.module("employeeApp",[]);
+var employeeApp = angular.module("employeeApp",['ngGrid']);
 
-employeeApp.factory('employeeAppFactory', function employeeAppFactory(x){
+employeeApp.factory('EmployeeAppFactory', function(){
 
 	console.log("inside factory");
-	var factory ={};
 
-	factory.display = function(){
-		console.log("inside display");
+	EmployeeAppFactory = function(fName,mName,lName,location,title,department,userType){
+		this.fName = fName;
+		this.mName = mName;
+		this.location = location;
+		this.title = title;
+		this.department = department;
+		this.userType =userType;
+
 	};
 
-	console.log(factory);
-	console.log(x);
-	
-	return factory;
+	return EmployeeAppFactory;
 
 });
 
 
 
-employeeApp.controller('mainController',function($scope,employeeAppFactory){
+employeeApp.controller('mainController',function($scope,EmployeeAppFactory){
 	console.log("inside controller");
-	console.log(employeeAppFactory);
+	console.dir(EmployeeAppFactory);
 
-	employeeAppFactory.display();
+
+	
+
+
+	$scope.employees = [];
+
+	//employeeAppFactory.display();
 
 	$scope.addData = function(){
 
+		console.log("inside addData")
 		var fName = $scope.fName;
 		var mName = $scope.mName;
 		var lName = $scope.lName;
@@ -35,9 +44,23 @@ employeeApp.controller('mainController',function($scope,employeeAppFactory){
 		var department = $scope.department;
 		var userType = $scope.userType;
 
-		var newEmployee =  new employeeAppFactory("HEY")
+		var employee =  new EmployeeAppFactory(fName,mName,lName,location,title,department,userType);
+		console.log(employee);
+		$scope.employees.push(employee);
+		//$scope.display();
+		console.log($scope.employees[0]);
 
-	}
+
+		//window.location = "gridView.html";
+
+	};
+
+	console.log($scope.employees);
+
+	$scope.gridOptions = {data:'$scope.employees[0]'};
+
+
+	
 
 
 });
