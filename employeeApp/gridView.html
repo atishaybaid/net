@@ -15,9 +15,10 @@
 </head>
 
 
-<body data-ng-controller="mainController">
+<body data-ng-controller="viewController">
+	<button ng-click="expandAllRows()">Expand or Collapse All Rows</button>
+	<div class="gridStyle" ng-grid="gridOptions"></div>
 	
-	<div class="gridStyle" ng-grid="gridOptions" ></div>
-
+	
 </body>
 </html>

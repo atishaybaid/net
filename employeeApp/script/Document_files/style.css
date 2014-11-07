@@ -1,0 +1,36 @@
+#mainContent{
+
+	width: 50%;
+}
+
+
+#leftSection{
+	width: 50%;
+	float: left;
+}
+
+
+#ri{
+	width: 50%;
+	float: left;
+}
+
+
+span{
+	display: block;
+	margin-top: 5px;
+}
+
+
+#downSection{
+	clear: both;
+}
+
+input,select{
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+#submitButton{
+		margin-left:90px;
+}

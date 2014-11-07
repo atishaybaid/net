@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)file:///C:/Users/abaid1/net/employeeApp/gridView.html -->
+<html lang="en" data-ng-app="employeeApp" class="ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<script src="./Document_files/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./Document_files/ng-grid.css">
+	<link rel="stylesheet" type="text/css" href="./Document_files/style.css">
+	<link rel="stylesheet" type="text/css" href="./Document_files/gridStyle.css">
+	<script type="text/javascript" src="./Document_files/angular.js"></script>
+	<script type="text/javascript" src="./Document_files/ng-grid.debug.js"></script>
+	<script type="text/javascript" src="./Document_files/script.js"></script>
+
+<style type="text/css" id="ng1415273501548">.ng1415273501548 .ngCanvas { width: 459px; }.ng1415273501548 .ngRow { width: 459px; }.ng1415273501548 .ngCanvas { width: 459px; }.ng1415273501548 .ngHeaderScroller { width: 475px}.ng1415273501548 .col0 { width: 25px; left: 0px; height: 30px }.ng1415273501548 .colt0 { width: 25px; }.ng1415273501548 .col1 { width: 25px; left: 25px; height: 30px }.ng1415273501548 .colt1 { width: 25px; }.ng1415273501548 .col2 { width: 25px; left: 50px; height: 30px }.ng1415273501548 .colt2 { width: 25px; }.ng1415273501548 .col3 { width: 54px; left: 75px; height: 30px }.ng1415273501548 .colt3 { width: 54px; }.ng1415273501548 .col4 { width: 54px; left: 129px; height: 30px }.ng1415273501548 .colt4 { width: 54px; }.ng1415273501548 .col5 { width: 54px; left: 183px; height: 30px }.ng1415273501548 .colt5 { width: 54px; }.ng1415273501548 .col6 { width: 54px; left: 237px; height: 30px }.ng1415273501548 .colt6 { width: 54px; }.ng1415273501548 .col7 { width: 54px; left: 291px; height: 30px }.ng1415273501548 .colt7 { width: 54px; }.ng1415273501548 .col8 { width: 54px; left: 345px; height: 30px }.ng1415273501548 .colt8 { width: 54px; }.ng1415273501548 .col9 { width: 60px; left: 399px; height: 30px }.ng1415273501548 .colt9 { width: 60px; }</style></head>
+
+
+<body data-ng-controller="viewController" class="ng-scope">
+	<button ng-click="expandAllRows()">Expand or Collapse All Rows</button>
+	<div class="gridStyle ng-scope ngGrid ng1415273501548 unselectable" ng-grid="gridOptions"><div class="ngTopPanel ng-scope" ng-class="{&#39;ui-widget-header&#39;:jqueryUITheme, &#39;ui-corner-top&#39;: jqueryUITheme}" ng-style="topPanelStyle()" style="width: 400px; height: 62px;">
+    <div class="ngGroupPanel" ng-show="showGroupPanel()" ng-style="groupPanelStyle()" style="width: 400px; height: 32px;">
+        <div class="ngGroupPanelDescription ng-binding ng-hide" ng-show="configGroups.length == 0">Drag a column header here and drop it to group by that column.</div>
+        <ul ng-show="configGroups.length &gt; 0" class="ngGroupList">
+            <!-- ngRepeat: group in configGroups --><li class="ngGroupItem ng-scope" ng-repeat="group in configGroups">
+                <span class="ngGroupElement">
+                    <span class="ngGroupName ng-binding">id
+                        <span ng-click="removeGroup($index)" class="ngRemoveGroup">x</span>
+                    </span>
+                    <span ng-hide="$last" class="ngGroupArrow"></span>
+                </span>
+            </li><!-- end ngRepeat: group in configGroups --><li class="ngGroupItem ng-scope" ng-repeat="group in configGroups">
+                <span class="ngGroupElement">
+                    <span class="ngGroupName ng-binding">fName
+                        <span ng-click="removeGroup($index)" class="ngRemoveGroup">x</span>
+                    </span>
+                    <span ng-hide="$last" class="ngGroupArrow"></span>
+                </span>
+            </li><!-- end ngRepeat: group in configGroups --><li class="ngGroupItem ng-scope" ng-repeat="group in configGroups">
+                <span class="ngGroupElement">
+                    <span class="ngGroupName ng-binding">mName
+                        <span ng-click="removeGroup($index)" class="ngRemoveGroup">x</span>
+                    </span>
+                    <span ng-hide="$last" class="ngGroupArrow ng-hide"></span>
+                </span>
+            </li><!-- end ngRepeat: group in configGroups -->
+        </ul>
+    </div>
+    <div class="ngHeaderContainer" ng-style="headerStyle()" style="width: 400px; height: 30px;">
+        <div ng-header-row="" class="ngHeaderScroller" ng-style="headerScrollerStyle()" style="height: 30px;"><!-- ngRepeat: col in renderedColumns --><div ng-style="{ height: col.headerRowHeight }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngHeaderCell ng-scope col0 colt0" style="height: 30px;" ng-click="j()">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: col.headerRowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-header-cell=""><div class="ngAggHeader ng-scope"></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ height: col.headerRowHeight }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngHeaderCell ng-scope col1 colt1" style="height: 30px;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: col.headerRowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-header-cell=""><div class="ngAggHeader ng-scope"></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ height: col.headerRowHeight }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngHeaderCell ng-scope col2 colt2" style="height: 30px;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: col.headerRowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-header-cell=""><div class="ngAggHeader ng-scope"></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ height: col.headerRowHeight }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngHeaderCell ng-scope col3 colt3" style="height: 30px;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: col.headerRowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-header-cell=""><div class="ngHeaderSortColumn  ngSorted" ng-style="{&#39;cursor&#39;: col.cursor}" ng-class="{ &#39;ngSorted&#39;: !col.noSortVisible() }" style="cursor: pointer;" draggable="true">
+    <div ng-click="col.sort($event)" ng-class="&#39;colt&#39; + col.index" class="ngHeaderText ng-binding colt3">id</div>
+    <div class="ngSortButtonDown" ng-click="col.sort($event)" ng-show="col.showSortButtonDown()"></div>
+    <div class="ngSortButtonUp ng-hide" ng-click="col.sort($event)" ng-show="col.showSortButtonUp()"></div>
+    <div class="ngSortPriority ng-binding">1</div>
+    <div ng-class="{ ngPinnedIcon: col.pinned, ngUnPinnedIcon: !col.pinned }" ng-click="togglePin(col)" ng-show="col.pinnable" class="ng-hide ngUnPinnedIcon"></div>
+</div>
+<div ng-show="col.resizable" class="ngHeaderGrip ng-scope ng-hide" ng-click="col.gripClick($event)" ng-mousedown="col.gripOnMouseDown($event)"></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ height: col.headerRowHeight }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngHeaderCell ng-scope col4 colt4" style="height: 30px;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: col.headerRowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-header-cell=""><div class="ngHeaderSortColumn  ngSorted" ng-style="{&#39;cursor&#39;: col.cursor}" ng-class="{ &#39;ngSorted&#39;: !col.noSortVisible() }" style="cursor: pointer;" draggable="true">
+    <div ng-click="col.sort($event)" ng-class="&#39;colt&#39; + col.index" class="ngHeaderText ng-binding colt4">fName</div>
+    <div class="ngSortButtonDown" ng-click="col.sort($event)" ng-show="col.showSortButtonDown()"></div>
+    <div class="ngSortButtonUp ng-hide" ng-click="col.sort($event)" ng-show="col.showSortButtonUp()"></div>
+    <div class="ngSortPriority ng-binding">2</div>
+    <div ng-class="{ ngPinnedIcon: col.pinned, ngUnPinnedIcon: !col.pinned }" ng-click="togglePin(col)" ng-show="col.pinnable" class="ng-hide ngUnPinnedIcon"></div>
+</div>
+<div ng-show="col.resizable" class="ngHeaderGrip ng-scope ng-hide" ng-click="col.gripClick($event)" ng-mousedown="col.gripOnMouseDown($event)"></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ height: col.headerRowHeight }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngHeaderCell ng-scope col5 colt5" style="height: 30px;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: col.headerRowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-header-cell=""><div class="ngHeaderSortColumn  ngSorted" ng-style="{&#39;cursor&#39;: col.cursor}" ng-class="{ &#39;ngSorted&#39;: !col.noSortVisible() }" style="cursor: pointer;" draggable="true">
+    <div ng-click="col.sort($event)" ng-class="&#39;colt&#39; + col.index" class="ngHeaderText ng-binding colt5">mName</div>
+    <div class="ngSortButtonDown" ng-click="col.sort($event)" ng-show="col.showSortButtonDown()"></div>
+    <div class="ngSortButtonUp ng-hide" ng-click="col.sort($event)" ng-show="col.showSortButtonUp()"></div>
+    <div class="ngSortPriority ng-binding">3</div>
+    <div ng-class="{ ngPinnedIcon: col.pinned, ngUnPinnedIcon: !col.pinned }" ng-click="togglePin(col)" ng-show="col.pinnable" class="ng-hide ngUnPinnedIcon"></div>
+</div>
+<div ng-show="col.resizable" class="ngHeaderGrip ng-scope ng-hide" ng-click="col.gripClick($event)" ng-mousedown="col.gripOnMouseDown($event)"></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ height: col.headerRowHeight }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngHeaderCell ng-scope col6 colt6" style="height: 30px;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: col.headerRowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-header-cell=""><div class="ngHeaderSortColumn " ng-style="{&#39;cursor&#39;: col.cursor}" ng-class="{ &#39;ngSorted&#39;: !col.noSortVisible() }" style="cursor: pointer;" draggable="true">
+    <div ng-click="col.sort($event)" ng-class="&#39;colt&#39; + col.index" class="ngHeaderText ng-binding colt6">location</div>
+    <div class="ngSortButtonDown ng-hide" ng-click="col.sort($event)" ng-show="col.showSortButtonDown()"></div>
+    <div class="ngSortButtonUp ng-hide" ng-click="col.sort($event)" ng-show="col.showSortButtonUp()"></div>
+    <div class="ngSortPriority ng-binding"></div>
+    <div ng-class="{ ngPinnedIcon: col.pinned, ngUnPinnedIcon: !col.pinned }" ng-click="togglePin(col)" ng-show="col.pinnable" class="ng-hide ngUnPinnedIcon"></div>
+</div>
+<div ng-show="col.resizable" class="ngHeaderGrip ng-scope ng-hide" ng-click="col.gripClick($event)" ng-mousedown="col.gripOnMouseDown($event)"></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ height: col.headerRowHeight }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngHeaderCell ng-scope col7 colt7" style="height: 30px;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: col.headerRowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-header-cell=""><div class="ngHeaderSortColumn " ng-style="{&#39;cursor&#39;: col.cursor}" ng-class="{ &#39;ngSorted&#39;: !col.noSortVisible() }" style="cursor: pointer;" draggable="true">
+    <div ng-click="col.sort($event)" ng-class="&#39;colt&#39; + col.index" class="ngHeaderText ng-binding colt7">title</div>
+    <div class="ngSortButtonDown ng-hide" ng-click="col.sort($event)" ng-show="col.showSortButtonDown()"></div>
+    <div class="ngSortButtonUp ng-hide" ng-click="col.sort($event)" ng-show="col.showSortButtonUp()"></div>
+    <div class="ngSortPriority ng-binding"></div>
+    <div ng-class="{ ngPinnedIcon: col.pinned, ngUnPinnedIcon: !col.pinned }" ng-click="togglePin(col)" ng-show="col.pinnable" class="ng-hide ngUnPinnedIcon"></div>
+</div>
+<div ng-show="col.resizable" class="ngHeaderGrip ng-scope ng-hide" ng-click="col.gripClick($event)" ng-mousedown="col.gripOnMouseDown($event)"></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ height: col.headerRowHeight }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngHeaderCell ng-scope col8 colt8" style="height: 30px;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: col.headerRowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-header-cell=""><div class="ngHeaderSortColumn " ng-style="{&#39;cursor&#39;: col.cursor}" ng-class="{ &#39;ngSorted&#39;: !col.noSortVisible() }" style="cursor: pointer;" draggable="true">
+    <div ng-click="col.sort($event)" ng-class="&#39;colt&#39; + col.index" class="ngHeaderText ng-binding colt8">department</div>
+    <div class="ngSortButtonDown ng-hide" ng-click="col.sort($event)" ng-show="col.showSortButtonDown()"></div>
+    <div class="ngSortButtonUp ng-hide" ng-click="col.sort($event)" ng-show="col.showSortButtonUp()"></div>
+    <div class="ngSortPriority ng-binding"></div>
+    <div ng-class="{ ngPinnedIcon: col.pinned, ngUnPinnedIcon: !col.pinned }" ng-click="togglePin(col)" ng-show="col.pinnable" class="ng-hide ngUnPinnedIcon"></div>
+</div>
+<div ng-show="col.resizable" class="ngHeaderGrip ng-scope ng-hide" ng-click="col.gripClick($event)" ng-mousedown="col.gripOnMouseDown($event)"></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ height: col.headerRowHeight }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngHeaderCell ng-scope col9 colt9" style="height: 30px;">
+	<div class="ngVerticalBar" ng-style="{height: col.headerRowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-header-cell=""><div class="ngHeaderSortColumn " ng-style="{&#39;cursor&#39;: col.cursor}" ng-class="{ &#39;ngSorted&#39;: !col.noSortVisible() }" style="cursor: pointer;" draggable="true">
+    <div ng-click="col.sort($event)" ng-class="&#39;colt&#39; + col.index" class="ngHeaderText ng-binding colt9">userType</div>
+    <div class="ngSortButtonDown ng-hide" ng-click="col.sort($event)" ng-show="col.showSortButtonDown()"></div>
+    <div class="ngSortButtonUp ng-hide" ng-click="col.sort($event)" ng-show="col.showSortButtonUp()"></div>
+    <div class="ngSortPriority ng-binding"></div>
+    <div ng-class="{ ngPinnedIcon: col.pinned, ngUnPinnedIcon: !col.pinned }" ng-click="togglePin(col)" ng-show="col.pinnable" class="ng-hide ngUnPinnedIcon"></div>
+</div>
+<div ng-show="col.resizable" class="ngHeaderGrip ng-scope ng-hide" ng-click="col.gripClick($event)" ng-mousedown="col.gripOnMouseDown($event)"></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --></div>
+    </div>
+    <div ng-grid-menu=""><div ng-show="showColumnMenu || showFilter" class="ngHeaderButton ng-scope ng-hide" ng-click="toggleShowMenu()">
+    <div class="ngHeaderButtonArrow"></div>
+</div>
+<div ng-show="showMenu" class="ngColMenu ng-scope ng-hide">
+    <div ng-show="showFilter" class="ng-hide">
+        <input placeholder="Search..." type="text" ng-model="filterOptions.filterText" class="ng-pristine ng-valid">
+    </div>
+    <div ng-show="showColumnMenu" class="ng-hide">
+        <span class="ngMenuText ng-binding">Choose Columns:</span>
+        <ul class="ngColList">
+            <!-- ngRepeat: col in columns | ngColumns --><li class="ngColListItem ng-scope" ng-repeat="col in columns | ngColumns">
+                <label class="ng-binding"><input ng-disabled="col.pinned" type="checkbox" class="ngColListCheckbox ng-pristine ng-valid" ng-model="col.visible">id</label>
+				<a title="Group By" ng-class="col.groupedByClass()" ng-show="col.groupable &amp;&amp; col.visible" ng-click="groupBy(col)" class="ngGroupedByIcon"></a>
+				<span class="ngGroupingNumber ng-binding" ng-show="col.groupIndex &gt; 0">1</span>          
+            </li><!-- end ngRepeat: col in columns | ngColumns --><li class="ngColListItem ng-scope" ng-repeat="col in columns | ngColumns">
+                <label class="ng-binding"><input ng-disabled="col.pinned" type="checkbox" class="ngColListCheckbox ng-pristine ng-valid" ng-model="col.visible">fName</label>
+				<a title="Group By" ng-class="col.groupedByClass()" ng-show="col.groupable &amp;&amp; col.visible" ng-click="groupBy(col)" class="ngGroupedByIcon"></a>
+				<span class="ngGroupingNumber ng-binding" ng-show="col.groupIndex &gt; 0">2</span>          
+            </li><!-- end ngRepeat: col in columns | ngColumns --><li class="ngColListItem ng-scope" ng-repeat="col in columns | ngColumns">
+                <label class="ng-binding"><input ng-disabled="col.pinned" type="checkbox" class="ngColListCheckbox ng-pristine ng-valid" ng-model="col.visible">mName</label>
+				<a title="Group By" ng-class="col.groupedByClass()" ng-show="col.groupable &amp;&amp; col.visible" ng-click="groupBy(col)" class="ngGroupedByIcon"></a>
+				<span class="ngGroupingNumber ng-binding" ng-show="col.groupIndex &gt; 0">3</span>          
+            </li><!-- end ngRepeat: col in columns | ngColumns --><li class="ngColListItem ng-scope" ng-repeat="col in columns | ngColumns">
+                <label class="ng-binding"><input ng-disabled="col.pinned" type="checkbox" class="ngColListCheckbox ng-pristine ng-valid" ng-model="col.visible">location</label>
+				<a title="Group By" ng-class="col.groupedByClass()" ng-show="col.groupable &amp;&amp; col.visible" ng-click="groupBy(col)" class="ngGroupIcon"></a>
+				<span class="ngGroupingNumber ng-binding ng-hide" ng-show="col.groupIndex &gt; 0">0</span>          
+            </li><!-- end ngRepeat: col in columns | ngColumns --><li class="ngColListItem ng-scope" ng-repeat="col in columns | ngColumns">
+                <label class="ng-binding"><input ng-disabled="col.pinned" type="checkbox" class="ngColListCheckbox ng-pristine ng-valid" ng-model="col.visible">title</label>
+				<a title="Group By" ng-class="col.groupedByClass()" ng-show="col.groupable &amp;&amp; col.visible" ng-click="groupBy(col)" class="ngGroupIcon"></a>
+				<span class="ngGroupingNumber ng-binding ng-hide" ng-show="col.groupIndex &gt; 0">0</span>          
+            </li><!-- end ngRepeat: col in columns | ngColumns --><li class="ngColListItem ng-scope" ng-repeat="col in columns | ngColumns">
+                <label class="ng-binding"><input ng-disabled="col.pinned" type="checkbox" class="ngColListCheckbox ng-pristine ng-valid" ng-model="col.visible">department</label>
+				<a title="Group By" ng-class="col.groupedByClass()" ng-show="col.groupable &amp;&amp; col.visible" ng-click="groupBy(col)" class="ngGroupIcon"></a>
+				<span class="ngGroupingNumber ng-binding ng-hide" ng-show="col.groupIndex &gt; 0">0</span>          
+            </li><!-- end ngRepeat: col in columns | ngColumns --><li class="ngColListItem ng-scope" ng-repeat="col in columns | ngColumns">
+                <label class="ng-binding"><input ng-disabled="col.pinned" type="checkbox" class="ngColListCheckbox ng-pristine ng-valid" ng-model="col.visible">userType</label>
+				<a title="Group By" ng-class="col.groupedByClass()" ng-show="col.groupable &amp;&amp; col.visible" ng-click="groupBy(col)" class="ngGroupIcon"></a>
+				<span class="ngGroupingNumber ng-binding ng-hide" ng-show="col.groupIndex &gt; 0">0</span>          
+            </li><!-- end ngRepeat: col in columns | ngColumns -->
+        </ul>
+    </div>
+</div></div>
+</div>
+<div class="ngViewport ng-scope" unselectable="on" ng-viewport="" ng-class="{&#39;ui-widget-content&#39;: jqueryUITheme}" ng-style="viewportStyle()" tabindex="0" style="width: 400px; height: 236px;">
+    <div class="ngCanvas" ng-style="canvasStyle()" style="height: 600px;">
+        <!-- ngRepeat: row in renderedRows --><div ng-style="rowStyle(row)" ng-repeat="row in renderedRows" ng-click="row.toggleSelected($event)" ng-class="row.alternatingRowClass()" ng-row="" class="ng-scope" style="top: 0px; height: 30px; left: 0px;"><div ng-click="row.toggleExpand()" ng-style="rowStyle(row)" class="ngAggregate ng-scope" style="top: 0px; height: 30px; left: 0px;">
+    <span class="ngAggregateText ng-binding">1415164968027 (1 )</span>
+    <div class="ngAggArrowCollapsed"></div>
+</div></div><!-- end ngRepeat: row in renderedRows --><div ng-style="rowStyle(row)" ng-repeat="row in renderedRows" ng-click="row.toggleSelected($event)" ng-class="row.alternatingRowClass()" ng-row="" class="ng-scope" style="top: 30px; height: 30px; left: 50px;"><div ng-click="row.toggleExpand()" ng-style="rowStyle(row)" class="ngAggregate ng-scope" style="top: 30px; height: 30px; left: 50px;">
+    <span class="ngAggregateText ng-binding">kr (1 )</span>
+    <div class="ngAggArrowExpanded"></div>
+</div></div><!-- end ngRepeat: row in renderedRows --><div ng-style="rowStyle(row)" ng-repeat="row in renderedRows" ng-click="row.toggleSelected($event)" ng-class="row.alternatingRowClass()" ng-row="" class="ng-scope ngRow even" style="top: 60px; height: 30px;"><!-- ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col0 colt0" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col0 colt0" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding"></span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col1 colt1" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col1 colt1" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding"></span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col2 colt2" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col2 colt2" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding"></span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col3 colt3" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col3 colt3" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">1415164968027</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col4 colt4" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col4 colt4" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">Surander</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col5 colt5" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col5 colt5" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">kr</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col6 colt6" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col6 colt6" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">Bikaner</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col7 colt7" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col7 colt7" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">Senior Associate</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col8 colt8" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col8 colt8" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">GM</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col9 colt9" style="cursor: pointer;">
+	<div class="ngVerticalBar" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col9 colt9" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">lineManger</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --></div><!-- end ngRepeat: row in renderedRows --><div ng-style="rowStyle(row)" ng-repeat="row in renderedRows" ng-click="row.toggleSelected($event)" ng-class="row.alternatingRowClass()" ng-row="" class="ng-scope" style="top: 90px; height: 30px; left: 0px;"><div ng-click="row.toggleExpand()" ng-style="rowStyle(row)" class="ngAggregate ng-scope" style="top: 90px; height: 30px; left: 0px;">
+    <span class="ngAggregateText ng-binding">1415164978325 (1 )</span>
+    <div class="ngAggArrowCollapsed"></div>
+</div></div><!-- end ngRepeat: row in renderedRows --><div ng-style="rowStyle(row)" ng-repeat="row in renderedRows" ng-click="row.toggleSelected($event)" ng-class="row.alternatingRowClass()" ng-row="" class="ng-scope" style="top: 120px; height: 30px; left: 50px;"><div ng-click="row.toggleExpand()" ng-style="rowStyle(row)" class="ngAggregate ng-scope" style="top: 120px; height: 30px; left: 50px;">
+    <span class="ngAggregateText ng-binding">kr (1 )</span>
+    <div class="ngAggArrowExpanded"></div>
+</div></div><!-- end ngRepeat: row in renderedRows --><div ng-style="rowStyle(row)" ng-repeat="row in renderedRows" ng-click="row.toggleSelected($event)" ng-class="row.alternatingRowClass()" ng-row="" class="ng-scope ngRow odd" style="top: 150px; height: 30px;"><!-- ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col0 colt0" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col0 colt0" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding"></span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col1 colt1" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col1 colt1" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding"></span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col2 colt2" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col2 colt2" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding"></span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col3 colt3" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col3 colt3" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">1415164978325</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col4 colt4" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col4 colt4" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">n</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col5 colt5" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col5 colt5" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">kr</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col6 colt6" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col6 colt6" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">Bikaner</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col7 colt7" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col7 colt7" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">Senior Associate</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col8 colt8" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col8 colt8" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">GM</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col9 colt9" style="cursor: pointer;">
+	<div class="ngVerticalBar" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col9 colt9" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">lineManger</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --></div><!-- end ngRepeat: row in renderedRows --><div ng-style="rowStyle(row)" ng-repeat="row in renderedRows" ng-click="row.toggleSelected($event)" ng-class="row.alternatingRowClass()" ng-row="" class="ng-scope" style="top: 180px; height: 30px; left: 0px;"><div ng-click="row.toggleExpand()" ng-style="rowStyle(row)" class="ngAggregate ng-scope" style="top: 180px; height: 30px; left: 0px;">
+    <span class="ngAggregateText ng-binding">1415170097097 (1 )</span>
+    <div class="ngAggArrowExpanded"></div>
+</div></div><!-- end ngRepeat: row in renderedRows --><div ng-style="rowStyle(row)" ng-repeat="row in renderedRows" ng-click="row.toggleSelected($event)" ng-class="row.alternatingRowClass()" ng-row="" class="ng-scope" style="top: 210px; height: 30px; left: 25px;"><div ng-click="row.toggleExpand()" ng-style="rowStyle(row)" class="ngAggregate ng-scope" style="top: 210px; height: 30px; left: 25px;">
+    <span class="ngAggregateText ng-binding">Rehman (1 )</span>
+    <div class="ngAggArrowCollapsed"></div>
+</div></div><!-- end ngRepeat: row in renderedRows --><div ng-style="rowStyle(row)" ng-repeat="row in renderedRows" ng-click="row.toggleSelected($event)" ng-class="row.alternatingRowClass()" ng-row="" class="ng-scope ngRow even" style="top: 240px; height: 30px;"><!-- ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col0 colt0" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col0 colt0" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding"></span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col1 colt1" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col1 colt1" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding"></span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col2 colt2" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col2 colt2" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding"></span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col3 colt3" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col3 colt3" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">1415170097097</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col4 colt4" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col4 colt4" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">Rehman</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col5 colt5" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col5 colt5" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">jael</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col6 colt6" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col6 colt6" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">Biakner</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col7 colt7" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col7 colt7" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">Associate</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col8 colt8" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col8 colt8" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">Nitro</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col9 colt9" style="cursor: pointer;">
+	<div class="ngVerticalBar" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col9 colt9" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">lineManger</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --></div><!-- end ngRepeat: row in renderedRows --><div ng-style="rowStyle(row)" ng-repeat="row in renderedRows" ng-click="row.toggleSelected($event)" ng-class="row.alternatingRowClass()" ng-row="" class="ng-scope" style="top: 270px; height: 30px; left: 0px;"><div ng-click="row.toggleExpand()" ng-style="rowStyle(row)" class="ngAggregate ng-scope" style="top: 270px; height: 30px; left: 0px;">
+    <span class="ngAggregateText ng-binding">1415170168242 (1 )</span>
+    <div class="ngAggArrowExpanded"></div>
+</div></div><!-- end ngRepeat: row in renderedRows --><div ng-style="rowStyle(row)" ng-repeat="row in renderedRows" ng-click="row.toggleSelected($event)" ng-class="row.alternatingRowClass()" ng-row="" class="ng-scope" style="top: 300px; height: 30px; left: 25px;"><div ng-click="row.toggleExpand()" ng-style="rowStyle(row)" class="ngAggregate ng-scope" style="top: 300px; height: 30px; left: 25px;">
+    <span class="ngAggregateText ng-binding">juna (1 )</span>
+    <div class="ngAggArrowCollapsed"></div>
+</div></div><!-- end ngRepeat: row in renderedRows --><div ng-style="rowStyle(row)" ng-repeat="row in renderedRows" ng-click="row.toggleSelected($event)" ng-class="row.alternatingRowClass()" ng-row="" class="ng-scope ngRow odd" style="top: 330px; height: 30px;"><!-- ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col0 colt0" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col0 colt0" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding"></span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col1 colt1" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col1 colt1" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding"></span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col2 colt2" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col2 colt2" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding"></span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col3 colt3" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col3 colt3" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">1415170168242</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col4 colt4" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col4 colt4" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">juna</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col5 colt5" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col5 colt5" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">jael</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col6 colt6" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col6 colt6" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">Biakner</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col7 colt7" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col7 colt7" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">Associate</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col8 colt8" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col8 colt8" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">Nitro</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col9 colt9" style="cursor: pointer;">
+	<div class="ngVerticalBar" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col9 colt9" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">lineManger</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --></div><!-- end ngRepeat: row in renderedRows --><div ng-style="rowStyle(row)" ng-repeat="row in renderedRows" ng-click="row.toggleSelected($event)" ng-class="row.alternatingRowClass()" ng-row="" class="ng-scope" style="top: 360px; height: 30px; left: 0px;"><div ng-click="row.toggleExpand()" ng-style="rowStyle(row)" class="ngAggregate ng-scope" style="top: 360px; height: 30px; left: 0px;">
+    <span class="ngAggregateText ng-binding">1415170178978 (1 )</span>
+    <div class="ngAggArrowCollapsed"></div>
+</div></div><!-- end ngRepeat: row in renderedRows --><div ng-style="rowStyle(row)" ng-repeat="row in renderedRows" ng-click="row.toggleSelected($event)" ng-class="row.alternatingRowClass()" ng-row="" class="ng-scope" style="top: 390px; height: 30px; left: 50px;"><div ng-click="row.toggleExpand()" ng-style="rowStyle(row)" class="ngAggregate ng-scope" style="top: 390px; height: 30px; left: 50px;">
+    <span class="ngAggregateText ng-binding">jael (1 )</span>
+    <div class="ngAggArrowExpanded"></div>
+</div></div><!-- end ngRepeat: row in renderedRows --><div ng-style="rowStyle(row)" ng-repeat="row in renderedRows" ng-click="row.toggleSelected($event)" ng-class="row.alternatingRowClass()" ng-row="" class="ng-scope ngRow even" style="top: 420px; height: 30px;"><!-- ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col0 colt0" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col0 colt0" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding"></span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col1 colt1" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col1 colt1" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding"></span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col2 colt2" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col2 colt2" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding"></span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col3 colt3" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col3 colt3" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">1415170178978</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col4 colt4" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col4 colt4" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">Rubbty</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col5 colt5" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col5 colt5" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">jael</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col6 colt6" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col6 colt6" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">Biakner</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col7 colt7" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col7 colt7" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">Associate</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col8 colt8" style="cursor: pointer;">
+	<div class="ngVerticalBar ngVerticalBarVisible" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col8 colt8" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">GS</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --><div ng-style="{ &#39;cursor&#39;: row.cursor }" ng-repeat="col in renderedColumns" ng-class="col.colIndex()" class="ngCell  col9 colt9" style="cursor: pointer;">
+	<div class="ngVerticalBar" ng-style="{height: rowHeight}" ng-class="{ ngVerticalBarVisible: !$last }" style="height: 30px;">&nbsp;</div>
+	<div ng-cell=""><div class="ngCellText ng-scope col9 colt9" ng-class="col.colIndex()"><span ng-cell-text="" class="ng-binding">lineManger</span></div></div>
+</div><!-- end ngRepeat: col in renderedColumns --></div><!-- end ngRepeat: row in renderedRows -->
+    </div>
+</div>
+<div ng-grid-footer="" class="ng-scope"><div ng-show="showFooter" class="ngFooterPanel ng-scope ng-hide" ng-class="{&#39;ui-widget-content&#39;: jqueryUITheme, &#39;ui-corner-bottom&#39;: jqueryUITheme}" ng-style="footerStyle()" style="width: 400px; height: 0px;">
+    <div class="ngTotalSelectContainer">
+        <div class="ngFooterTotalItems" ng-class="{&#39;ngNoMultiSelect&#39;: !multiSelect}">
+            <span class="ngLabel ng-binding">Total Items: 5</span><span ng-show="filterText.length &gt; 0" class="ngLabel ng-binding ng-hide">(Showing Items: 5)</span>
+        </div>
+        <div class="ngFooterSelectedItems" ng-show="multiSelect">
+            <span class="ngLabel ng-binding">Selected Items: 0</span>
+        </div>
+    </div>
+    <div class="ngPagerContainer ng-hide" style="float: right; margin-top: 10px;" ng-show="enablePaging" ng-class="{&#39;ngNoMultiSelect&#39;: !multiSelect}">
+        <div style="float:left; margin-right: 10px;" class="ngRowCountPicker">
+            <span style="float: left; margin-top: 3px;" class="ngLabel ng-binding">Page Size:</span>
+            <select style="float: left;height: 27px; width: 100px" ng-model="pagingOptions.pageSize" class="ng-pristine ng-valid">
+                <!-- ngRepeat: size in pagingOptions.pageSizes --><option ng-repeat="size in pagingOptions.pageSizes" class="ng-binding ng-scope" value="250">250</option><!-- end ngRepeat: size in pagingOptions.pageSizes --><option ng-repeat="size in pagingOptions.pageSizes" class="ng-binding ng-scope" value="500">500</option><!-- end ngRepeat: size in pagingOptions.pageSizes --><option ng-repeat="size in pagingOptions.pageSizes" class="ng-binding ng-scope" value="1000">1000</option><!-- end ngRepeat: size in pagingOptions.pageSizes -->
+            </select>
+        </div>
+        <div style="float:left; margin-right: 10px; line-height:25px;" class="ngPagerControl">
+            <button type="button" class="ngPagerButton" ng-click="pageToFirst()" ng-disabled="cantPageBackward()" title="First Page" disabled="disabled"><div class="ngPagerFirstTriangle"><div class="ngPagerFirstBar"></div></div></button>
+            <button type="button" class="ngPagerButton" ng-click="pageBackward()" ng-disabled="cantPageBackward()" title="Previous Page" disabled="disabled"><div class="ngPagerFirstTriangle ngPagerPrevTriangle"></div></button>
+            <input class="ngPagerCurrent ng-pristine ng-valid ng-valid-number ng-valid-min" min="1" max="1" type="number" style="width:50px; height: 24px; margin-top: 1px; padding: 0 4px;" ng-model="pagingOptions.currentPage">
+            <span class="ngGridMaxPagesNumber ng-binding" ng-show="maxPages() &gt; 0">/ 1</span>
+            <button type="button" class="ngPagerButton" ng-click="pageForward()" ng-disabled="cantPageForward()" title="Next Page"><div class="ngPagerLastTriangle ngPagerNextTriangle"></div></button>
+            <button type="button" class="ngPagerButton" ng-click="pageToLast()" ng-disabled="cantPageToLast()" title="Last Page" disabled="disabled"><div class="ngPagerLastTriangle"><div class="ngPagerLastBar"></div></div></button>
+        </div>
+    </div>
+</div></div></div>
+	
+	
+
+</body></html>
