@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="calculatorApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Calculator</title>
+	<script type="text/javascript" src="script/angular.js"></script>
+	
+	<script type="text/javascript">
+
+	var calculatorApp = angular.module("calculatorApp",[]);
+
+	calculatorApp.controller("calculatorController",function($scope){
+
+		console.log("inside calculatorController");
+		
+		$scope.addNumbers = function(){
+
+			console.log("inside addNumbers");
+
+			 $scope.result = parseInt($scope.number1,10) + parseInt($scope.number2,10)+10;
+
+		};
+
+
+	});
+
+
+
+
+
+
+	</script>
+
+
+
+</head>
+<body ng-controller="calculatorController">
+Enter Number1 : <input type="text" name="" id="num1" ng-model="number1">
+Enter Number2 : <input type="text" name="" id="num1" ng-model="number2">
+<input type="button" value="Add" id="addButton" ng-click="addNumbers()">
+<div id="Results">
+	Result:{{result}}
+
+</div>
+	
+</body>
+</html>

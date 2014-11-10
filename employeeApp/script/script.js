@@ -1,5 +1,5 @@
 
-var employeeApp = angular.module("employeeApp",['ngGrid']);
+var employeeApp = angular.module("employeeApp",['ngGrid','ngRoute']);
 
 employeeApp.factory('EmployeeAppFactory', function(){
 
@@ -144,3 +144,24 @@ employeeApp.controller('viewController',function($scope,employeeStorage){
 
 
 });
+
+
+employeeApp.config(['$routeProvider',
+	function ($routeProvider) {
+		// body...
+		$routeProvider.
+			when('/form',{
+				templateUrl:'../partials/form.html',
+				controller:'mainController'
+			}).
+			when('/gridView',{
+				templateUrl:'../partials/gridView.html',
+				controller:'viewController'
+			}).
+			otherwise({
+				redirectTo:'/form',
+
+			});
+
+	}]);
+

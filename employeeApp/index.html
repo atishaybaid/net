@@ -2,7 +2,7 @@
 <html lang="en" data-ng-app="employeeApp">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Employee App</title>
 	<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>-->
 	<script type="text/javascript" src="script/jquery-2.1.1.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="http://angular-ui.github.com/ng-grid/css/ng-grid.css" />
@@ -10,87 +10,13 @@
 	<link rel="stylesheet" type="text/css" href="style/gridStyle.css">
 	<script type="text/javascript" src="script/angular.js"></script>
 	<script type="text/javascript" src="http://angular-ui.github.com/ng-grid/lib/ng-grid.debug.js"></script>
+	<script type="text/javascript" src="script/angular-route.js"></script>
 	<script type="text/javascript" src="script/script.js"></script>
 
 </head>
 <body data-ng-controller="mainController">
 
-<div id="mainContent">
-
-
- <section id="leftSection">
-
-	 <span>First NAME:<span>
-	 <input type="text" name="" id="fName" data-ng-model="fName">
-
-	 <span>Last Name:<span>
-	 <input type="text" name="" id="lName" data-ng-model="lName">
-	 
-	 <span>Email Addeess:<span>
-	 <input type="email" name="" id="email" data-ng-model="email">  
-
- </section>
-
- 
- <section id="rightSection">
-
-	 <span>Middle Name:</span> 
-	 <input type="text" name="" id="mName" data-ng-model="mName">
-
-	 <span>Locatoin:</span>
-	 <input type="text" name="" id="location" data-ng-model="location">
-
-	 <br><br><br>
-
-	 <select id="skillList" data-ng-model="skill">
-	 	<option selected="true" style="display:none;">Skill</option>
-	 	<option value="Java">Java</option>
-	 	<option value="Micrsoft Technologies">Microsoft</option>
-	 	<option value="Project managmanet">Project Managment</option>
-	 	<option value="QA-manual">QA-manual</option>
-	 	<option value="QA-Automation">QA-Automation</option>
-	 	<option value="Infrastructure">Infrastructure</option>
-	 	<option value="Business Consulting">Business Consulting</option>
-	 </select>	
-
- </section>	
- <br><br><br>
-
-<div id="downSection">
-
-	<select id="titleList" data-ng-model="title">
-		<option selected="true" style="display:none;">Title</option>
-		<option value="Associate">Associate</option>
-		<option value="Senior Associate">Senior Associate</option>
-		<option value="Manager">Manager</option>
-		<option value="Senior Manger">Senior Manager</option>
-		<option value="Director">Director</option>
-		<option value="VP">VP</option>
-	</select> 	
-
-	<select id="departmentList" data-ng-model="department">
-		<option selected="true" style="display:none;">Department</option>
-		<option value="Nitro">Nitro</option>
-		<option value="GM">GM</option>
-		<option value="GS">GS</option>
-	</select>
-
-
-	<select id="userTypeList" data-ng-model="userType">
-		<option selected="true" style="display:none;">User Type</option>
-		<option value="Administrator">Administrator</option>
-		<option value="lineManger">Line Manager</option>
-		<option value="employee">Employee</option>
-	</select>
-
-</div>
-
-<br><br>
-<input type="button" value="Submit" id="submitButton" data-ng-click="addData()">	
-
-
-</div>
-
+	<div ng-view></div>
 
 
 
