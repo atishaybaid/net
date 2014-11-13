@@ -11,15 +11,24 @@ describe("e2e  etest cases",function() {
 
 	it("Should be able to add two numbers",function(){
 		browser.get('http://localhost:8080/calculatorView.html');
+		//document.getElementById('datePicker').value = "";
 		element(by.model('number1')).sendKeys(10);
 		element(by.model('number2')).sendKeys(20);
 
+		
+
 		element(by.id('addButton')).click();
 
-		expect(element(by.binding('result')).getText()).
-		toEqual('Result:30');
+		//document.getElementById('datePicker').value = "";
 
+		element(by.model('dt')).clear();
+
+		element(by.model('dt')).sendKeys('2-december-2014');
+		expect(element(by.model('dt')).getAttribute('value')).toEqual('2-december-2014');
+
+		
 	});
+
 
 
 

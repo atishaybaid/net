@@ -5,9 +5,13 @@
 	<title>Calculator</title>
 	<script type="text/javascript" src="script/angular.js"></script>
 	
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript" src="script/jquery-2.1.1.min.js"></script>
+	<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.2.js"></script>
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 	<script type="text/javascript">
 
-	var calculatorApp = angular.module("calculatorApp",[]);
+	var calculatorApp = angular.module("calculatorApp",['ui.bootstrap']);
 
 	calculatorApp.controller("calculatorController",function($scope){
 
@@ -22,11 +26,47 @@
 		};
 
 
-	});
+		$scope.today = function() {
+    $scope.dt = new Date();
+  };
+  $scope.today();
+
+  $scope.clear = function () {
+    $scope.dt = null;
+  };
+
+  // Disable weekend selection
+  $scope.disabled = function(date, mode) {
+    return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+  };
+
+  $scope.toggleMin = function() {
+    $scope.minDate = $scope.minDate ? null : new Date();
+  };
+  $scope.toggleMin();
+
+  $scope.open = function($event) {
+    $event.preventDefault();
+    $event.stopPropagation();
+
+    $scope.opened = true;
+  };
+
+  $scope.dateOptions = {
+    formatYear: 'yy',
+    startingDay: 1
+  };
+
+  $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+  $scope.format = $scope.formats[0];
 
 
 
+	
 
+
+		 
+});
 
 
 	</script>
@@ -40,8 +80,33 @@ Enter Number2 : <input type="text" name="" id="num1" ng-model="number2">
 <input type="button" value="Add" id="addButton" ng-click="addNumbers()">
 <div id="Results">
 	Result:{{result}}
-
 </div>
+
+
+<div class="row">
+  <div class="span4">.2.</div>
+  <div class="span8">.3.</div>
+ <pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
+
+    <h4>Inline</h4>
+    
+    <div style="display:inline-block; min-height:290px;">
+        
+    </div>
+ </div>
+
+
+    <h4>Popup</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <p class="input-group">
+              <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" max-date="'2015-06-22'" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" / id="datePicker">
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+              </span>
+            </p>
+        </div>
+    </div>
 	
 </body>
 </html>
