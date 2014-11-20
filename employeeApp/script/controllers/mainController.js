@@ -1,4 +1,4 @@
-employeeApp.controller('mainController',function($scope,EmployeeAppFactory,employeeStorage){
+employeeApp.controller('mainController',function($scope,EmployeeAppFactory,employeeStorage,$http){
 	console.log("inside controller");
 	//console.dir(EmployeeAppFactory);
 
@@ -44,6 +44,19 @@ employeeApp.controller('mainController',function($scope,EmployeeAppFactory,emplo
 	};
 
 	//$scope.gridOptions = {data:'$scope.employees[0]'};
+
+
+	$http.get('http://localhost:8080/script/data2s.json').
+	success(function(data){
+		console.log(data);
+	}).
+	error(function(){
+
+	});
+
+
+
+
 
 	
 

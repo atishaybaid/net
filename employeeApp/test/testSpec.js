@@ -42,14 +42,24 @@ describe("An AngularJs test suite",function() {
 	});
 
 	beforeEach(function(){
-		var module = angular.module("employeeApp",['ngGrid']);
+		var module = angular.module("employeeApp",['ngGrid','ngRoute']);
 	});
 
 	it('should be registered',function(){
-		expect(module).not.to.equal(null);
+		expect(module).not.toEqual(null);
+	});
+
+	it('main controller should exists',function(){
+		expect(module.mainController).not.toEqual(null);
 	});
 
 	
+
+
+
+
+
+
 
 
 

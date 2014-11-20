@@ -19,8 +19,11 @@ module.exports = function(config) {
         'script/jquery-2.1.1.min.js',
         'script/calculator.js',
         'script/module.js',
-        'test/testSpec.js'
-
+        'test/testSpec.js',
+        'script/controllers/mainControllers.js',
+        'script/controllers/viewControllers.js',
+        'script/factory/EmployeeAppFactory.js',
+        'script/service/employeeStorage.js'
     ],
 
 
