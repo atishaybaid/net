@@ -8,15 +8,18 @@
     <script type="text/javascript" src="js/vendor/angular.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/controllers/mainCtrl.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
-
+	
 
 
 
 </head>
 <body data-ng-controller="mainCtrl">
-<div>
-	{{date.currentTime}}
+<div id="dateDisplay">
+	<h1>{{date.currentTime | date:"hh mm ss"}}<h1>
+	<h2>{{date.currentTime | date:"EEEE,MMMM d,yyyy"}}<h2>
 </div>
 
 
