@@ -46,7 +46,7 @@ employeeApp.controller('mainController',function($scope,EmployeeAppFactory,emplo
 	//$scope.gridOptions = {data:'$scope.employees[0]'};
 
 
-	$http.get('http://localhost:8080/script/data2s.json').
+	$http.get('http://localhost:8080/script/data2.json').
 	success(function(data){
 		console.log(data);
 	}).
