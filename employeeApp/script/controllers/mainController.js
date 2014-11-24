@@ -46,9 +46,10 @@ employeeApp.controller('mainController',function($scope,EmployeeAppFactory,emplo
 	//$scope.gridOptions = {data:'$scope.employees[0]'};
 
 
-	$http.get('http://localhost:8080/script/data2.json').
+	$http.get('http://localhost:8080/script/data.json').
 	success(function(data){
 		console.log(data);
+		console.dir($http.defaults.headers.common);
 	}).
 	error(function(){
 
