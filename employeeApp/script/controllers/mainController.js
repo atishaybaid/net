@@ -47,12 +47,14 @@ employeeApp.controller('mainController',function($scope,EmployeeAppFactory,emplo
 
 
 	$http.get('http://localhost:8080/script/data.json').
-	success(function(data){
+	success(function(data,status, headers, config){
 		console.log(data);
+		console.dir(status);
+		//console.log(headers);
 		console.dir($http.defaults.headers.common);
 	}).
-	error(function(){
-
+	error(function(data,status, headers, config){
+		console.dir(status);
 	});
 
 

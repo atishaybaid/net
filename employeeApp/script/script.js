@@ -52,10 +52,13 @@ employeeApp.config(['$provide', '$httpProvider', function($provide, $httpProvide
 
 
 	        // optional method
-		    'response': function(response) {
+		    'response': function(data,status, headers, config) {
 		      // do something on success
+
 		       console.log("inside response");
-		      return response;
+		       console.log(data.data);
+		       return data;
+
 		    },
 
 	        
@@ -63,6 +66,8 @@ employeeApp.config(['$provide', '$httpProvider', function($provide, $httpProvide
 	        specificallyHandled: function(specificallyHandledBlock) {
 	            specificallyHandleInProgress = true;
 	            try {
+	            	console.log("inside specificallyHandled");
+	            	console.log(specificallyHandledBlock);
 	                return specificallyHandledBlock();
 	            } finally {
 	                specificallyHandleInProgress = false;
