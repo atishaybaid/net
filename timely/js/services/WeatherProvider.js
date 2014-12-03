@@ -8,27 +8,38 @@ timelyApp.provider("Weather",function () {
 		};
 	};
 
-	this.$get = function($http){
-
-		$http({
-			method:'GET',
-			url:this.getUrl("forecast",city),
-			cache:true
-		}).success(function(data){
-			
-
-		}).error(function(data){
-
-		});
-			
-	};
-
 	this.getUrl = function(type,city){
 
 		return 'http://api.wunderground.com/api/' + this.apiKey +'/'
 				+type+'/q/' +city +'.json';
 
 	};
+
+	this.$get = function($q,$http){
+
+		var self =  this;
+
+		return{
+			getWeatherForecast:function(city){		
+				
+				console.log(self.getUrl("forecast",city));
+                var defered = $q.defer();
+				$http({
+					method: 'GET',
+					url: self.getUrl("forecast",city),
+					cache:true
+				}).success(function(data){
+					defer.resolve(data.forecast.simpleforecast);
+				}).error(function(err){
+					defered.reject(err);
+				});
+
+				return defered.promise;
+			}
+		};	
+	};
+
+	
 
 
 });
