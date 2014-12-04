@@ -1,6 +1,7 @@
 var mainCtrl = timelyApp.controller("mainCtrl",function ($scope,$timeout,Weather) {
 	
 	$scope.date = {};
+	$scope.weather = {};
 
 	var updateTime = function(){
 
@@ -12,6 +13,7 @@ var mainCtrl = timelyApp.controller("mainCtrl",function ($scope,$timeout,Weather
 	Weather.getWeatherForecast("CA/San_Francisco")
 	.then(function(data){
 		console.log(data);
+		$scope.weather.forecast = data;
 	});
 
 

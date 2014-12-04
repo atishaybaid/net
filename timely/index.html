@@ -16,10 +16,14 @@
  
 </head>
 <body data-ng-controller="mainCtrl">
-<div id="dateDisplay">
-	<h1>{{date.currentTime | date:"hh mm ss"}}<h1>
-	<h2>{{date.currentTime | date:"EEEE,MMMM d,yyyy"}}<h2>
-</div>
+	<div id="dateDisplay">
+		<h1>{{date.currentTime | date:"hh mm ss"}}<h1>
+		<h2>{{date.currentTime | date:"EEEE,MMMM d,yyyy"}}<h2>
+	</div>
+
+	<div id="forecastDisplay">
+		<pre>{{weather.forecast|json}}</pre>				
+	</div>
 
 
 	

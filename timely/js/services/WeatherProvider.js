@@ -20,16 +20,17 @@ timelyApp.provider("Weather",function () {
 		var self =  this;
 
 		return{
-			getWeatherForecast:function(city){		
+			getWeatherForecast:function(city){	
+
 				
 				console.log(self.getUrl("forecast",city));
                 var defered = $q.defer();
 				$http({
 					method: 'GET',
 					url: self.getUrl("forecast",city),
-					cache:true
+					cache:true		 
 				}).success(function(data){
-					defer.resolve(data.forecast.simpleforecast);
+					defered.resolve(data.forecast.simpleforecast);
 				}).error(function(err){
 					defered.reject(err);
 				});
