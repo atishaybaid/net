@@ -13,3 +13,6 @@ Screens
 
 files
 1)maifest.json:-https://developer.chrome.com/extensions/manifest
+2)app.js->contains the module to be loaded.
+3)mainCtrl.js->Complete logic of the app.
+4)WeatherProvider.js->calls the wonderground.com api,with the url and fetch the data

@@ -9,3 +9,16 @@
 #dateDisplay h2{
 	font-size: 1.0em;
 }
+
+
+
+#forecastDisplay ul li {
+  font-size: 4.5em;
+  text-align: center;
+}
+#forecastDisplay ul li h3 {
+  font-size: 1.4em;
+}
+#forecastDisplay ul li .today h3 {
+  font-size: 1.8em;
+}
