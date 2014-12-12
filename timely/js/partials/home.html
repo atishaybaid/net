@@ -1,0 +1,25 @@
+<div id="dateDisplay">
+			<h1>{{date.currentTime | date:"hh mm ss"}}<h1>
+			<h2>{{date.currentTime | date:"EEEE,MMMM d,yyyy"}}<h2>
+		</div>
+
+		<div id="forecastDisplay">
+			
+
+
+
+			<ul class="row list-unstyled">
+				<li data-ng-repeat="day in weather.forecast.forecastday" class="col-md-3">
+					
+					  <div ng-class="{today: $index == 0}">
+					  	<img ng-src="{{day.icon_url}}" class="{{ day.icon }}">
+					  	<h3>{{day.high.celsius}}</h3>
+					  	<h4 ng-if="$index == 0">Now</h4>
+	        			<h4 ng-if="$index != 0">{{ day.date.weekday }}</h4>
+					  </div>	
+					
+				</li>
+			
+			</ul>
+
+		</div>
