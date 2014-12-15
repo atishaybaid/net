@@ -22,3 +22,9 @@
 #forecastDisplay ul li .today h3 {
   font-size: 1.8em;
 }
+
+
+span{
+	float:right;
+	margin-right: 10px;
+}
