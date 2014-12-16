@@ -8,7 +8,7 @@ employeeApp.controller('viewController',function($scope,employeeStorage){
 
 	 $scope.myData = [{name: "Moroni", status: true},
                      {name: "Tiancum", status: true},
-                     {name: "Jacob", status: false},
+                     {name: "Jacob", status: false},bn
                      {name: "Nephi", status: false},
                      {name: "Enos", status: true}];
 

@@ -1,12 +1,21 @@
 timelyApp.factory('userSetting',function() {
 	
-	/*var default= {
-		location:'bikaner'
+	var defaultSetting = {
+		location:"bikaner"
 	};
-*/
+	
 	var setting={
-		//user:default
+		user:defaultSetting,
+		save:function(location){
+			console.log("inside save");
+
+			window.sessionStorage.setItem("location",location);
+
+		}
 	};
+
+	
+
 
 	return setting;
 
