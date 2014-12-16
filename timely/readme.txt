@@ -1,4 +1,3 @@
-
 A chrome extension to show current date and time on the home screen or when user opens new tab,will also allow user
 to set location.It will use some api servise for weather notification.
 The app would be build using  Angularjs Framework and will be using twitter bootstrap for styling
