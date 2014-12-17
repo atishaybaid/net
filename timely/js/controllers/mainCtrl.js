@@ -1,4 +1,4 @@
-var mainCtrl = timelyApp.controller("mainCtrl",function ($scope,$timeout,Weather) {
+var mainCtrl = timelyApp.controller("mainCtrl",function ($scope,$timeout,Weather,userSetting) {
 	
 	$scope.date = {};
 	$scope.weather = {};
@@ -10,7 +10,10 @@ var mainCtrl = timelyApp.controller("mainCtrl",function ($scope,$timeout,Weather
 
 	};
 
-	Weather.getWeatherForecast("bikaner")
+	var locationObj = userSetting.retrieve();
+	console.log(locationObj.location);
+
+	Weather.getWeatherForecast(locationObj.location)
 	.then(function(data){
 		console.log(data);
 		$scope.weather.forecast = data;

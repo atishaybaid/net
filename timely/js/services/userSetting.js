@@ -1,11 +1,11 @@
 timelyApp.factory('userSetting',function() {
 	
 	var defaultSetting = {
-		location:"bikaner"
+		location:"autoip"
 	};
 	
 	var setting={
-		//user:defaultSetting,
+		userSetting:{},
 		save:function(location){
 			console.log("inside save");
 			userLocation={
@@ -17,8 +17,14 @@ timelyApp.factory('userSetting',function() {
 			window.sessionStorage.setItem("location",angular.toJson(userLocation));
 
 		},
-		retrive:function(){
-			window.sessionStorage.getItem("location");
+		retrieve:function(){
+			console.log("inside retrieve")
+			var storageLocationObj=angular.fromJson(window.sessionStorage.getItem("location"));
+			console.log(storageLocationObj);
+			userSetting = storageLocationObj || defaultSetting;
+			console.log(userSetting);
+			return userSetting;
+
 		}
 	};
 
