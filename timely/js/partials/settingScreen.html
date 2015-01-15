@@ -4,8 +4,15 @@
 	
 	<form ng-submit="submit()">
 		
-		<input type="text" placeholder="Enter Location" ng-model="location">
-		 <input class="btn btn-primary" type="submit" value="Save" />
+		<!--<input type="text" placeholder="Enter Location" ng-model="location">
+	-->
+		<input type="text"
+          ng-model="location"
+          timezone="user.timezone"
+          auto-fill="fetchCities"
+          autocomplete="off"
+          placeholder="Location" />
+		<input class="btn btn-primary" type="submit" value="Save" />
 	
 	</form>
 

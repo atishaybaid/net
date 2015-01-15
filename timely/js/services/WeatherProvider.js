@@ -36,7 +36,22 @@ timelyApp.provider("Weather",function () {
 				});
 
 				return defered.promise;
-			}
+			},
+
+			getCityDetails: function(query) {
+				console.log(query);
+		        var d = $q.defer();
+		        $http({
+		          method: 'GET',
+		          url: "http://autocomplete.wunderground.com/aq?query=" +
+		                query
+		        }).success(function(data) {
+		          d.resolve(data.RESULTS);
+		        }).error(function(err) {
+		          d.reject(err);
+		        });
+		        return d.promise;
+     		}
 		};	
 	};
 

@@ -1,4 +1,4 @@
-var settingCtrl = timelyApp.controller("settingCtrl",function($scope,userSetting){
+var settingCtrl = timelyApp.controller("settingCtrl",function($scope,userSetting,Weather){
 
 	console.log(userSetting.userSetting);
 
@@ -10,6 +10,6 @@ var settingCtrl = timelyApp.controller("settingCtrl",function($scope,userSetting
 	};
 
 	
-
+	$scope.fetchCities = Weather.getCityDetails;
 	// body...
 });

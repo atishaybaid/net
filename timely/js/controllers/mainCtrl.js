@@ -25,3 +25,4 @@ var mainCtrl = timelyApp.controller("mainCtrl",function ($scope,$timeout,Weather
 	updateTime();
 
 });
+
