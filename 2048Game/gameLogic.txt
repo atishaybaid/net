@@ -1,0 +1,4 @@
+Logical Steps(game contain nubers i.e
+1)There is 4x4 grid,and the game begins with 2 numbers
+2)each move a number '2' is  generated at any empty place in the grid.
+3)

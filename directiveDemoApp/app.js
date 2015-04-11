@@ -13,7 +13,7 @@ var mainCtrl = directiveApp.controller("mainCtrl",function($scope){
    console.log(keyCode); 
 	};
 
-	$scope.data = [1,2,3];
+	//$scope.data = [1,2,3];
 	
 
 	
@@ -38,13 +38,21 @@ directiveApp.directive("populateList",function(){
 			var input = elementTmpl.find('input');
 			
 			return function(scope,element,attribute){
-				console.log("inside link");		
+				console.log("inside link");
+						
 				var minKeys = 3;
 				input.bind('keyup',function(e){
 					console.log("inside bind");
 					value = input.val();
 					console.log(value.length);
 					console.log(scope.data);
+					if(value.length > 3){
+						scope.data = [1,2,3];
+					} else{
+						scope.data = null;
+
+					};
+					
 				});
 
 			}
