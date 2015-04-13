@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <script type="text/javascript">
+                                var scriptTag = document.createElement("script");
+                                scriptTag.src = "http://www.youtube.com/iframe_api";
+                                var orignalScriptTag = document.getElementsByTagName('script')[0];
+                                console.log(orignalScriptTag.parentNode);
+                                orignalScriptTag.parentNode.insertBefore(scriptTag,orignalScriptTag);
+                                
+                                var player;
+                            
+                            function onYouTubeIframeAPIReady() {
+                                player = new YT.Player('myPlayer', {
+                                height: '390',
+                                width: '670',
+              
+                 
+                                events: {
+                                    'onReady': onPlayerReady,
+                                    'onStateChange': onPlayerStateChange
+                                }
+                                });
+                            };
+                        
+                        function onPlayerReady(event) {
+                        	console.log(event);
+                        	player.cuePlaylist(["OG0xt2xTq4A","jOYR3k1VhUQ"]);
+                        //event.target.playVideo();
+                        	player.playVideo();
+                    
+                    	};
+                    
+                    var done = false;
+                    function onPlayerStateChange(event) {
+                        if (event.data == YT.PlayerState.PLAYING && !done) {
+                        	//player.loadVideoById("M7lc1UVf-VE", 5, "large")
+                        //setTimeout(stopVideo, 6000);
+                        done = true;
+                        }
+                    };
+
+
+                    function stopVideo() {
+                        player.stopVideo();
+                    }
+        </script>
+    </head>
+    <body>
+        <div id="myPlayer"></div>
+    </body>
+</html>
