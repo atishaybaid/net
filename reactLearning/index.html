@@ -5,6 +5,7 @@
         <title>Document</title>
         <script type="text/javascript" src="bower_components/react/react.js"></script>
         <script type="text/javascript" src="bower_components/react/JSXTransformer.js"></script>
+        <script type="text/javascript" src="bower_components/jquery/dist/jquery.jS"></script>
     </head>
     <body>
         <div id="content"></div>
@@ -14,11 +15,39 @@
         <script type="text/jsx">
 
         var CommentBox = React.createClass({
+            loadCommentsFromServer: function() {
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+             getInitialState: function() {
+    return {data: []};
+  },
+ componentDidMount: function() {
+    $.ajax({
+      url: this.props.url,
+      dataType: 'json',
+      success: function(data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+
   render: function() {
     return (
       <div className="commentBox">
         <h1>Comments</h1>
-        <CommentList data={this.props.data} />
+        <CommentList data={this.state.data} />
         <CommentForm />
       </div>
     );
@@ -70,18 +99,42 @@
 });
 
         
-
-
-       
         
+var InputBox = React.createClass({
+ getInitialState: function() {
+    return {value: 'Hello!'};
+  },
+  handleChange: function(event) {
+    this.setState({value: event.target.value});
+  },
+  render: function() {
+    var value = this.state.value;
+    return (
+      <input type="text" value={value} onChange={this.handleChange} />
+      );
+  }
+}); 
 
-        React.render(
-        <CommentBox  data={data} />,
+
+ React.render(
+        <InputBox />,
         document.getElementById('content')
 
 
 
         );
+
+
+       
+        
+
+        /*React.render(
+        <CommentBox  url="comments.json" />,
+        document.getElementById('content')
+
+
+
+        );*/
         
 
         </script>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <script type="text/javascript">
+        window.addEventListener("DOMContentLoaded",init);
+
+        function init(){
+        	var addErrBtn = document.getElementById('addErrBtn');
+        	addErrBtn.addEventListener("click",addError);
+        };
+
+
+        function addError(){
+        	var inputErrBox = document.getElementById('inputErrBox');
+        	var error = inputErrBox.value;
+            var category = errorSelectList.value;
+          /*  var errorItemList = '<li>'+error+'</li>';
+            document.createElement(li)
+            console.log(errorItemList);*/
+
+            switch (category) {
+                case 'Native Js error':
+                var nativeJsErrorList = document.getElementById('nativeJsErrorList');
+                var li = document.createElement("li");
+                li.appendChild(document.createTextNode(error))
+                nativeJsErrorList.appendChild(li);
+                break;
+
+                
+
+                case 'AngularJs error':
+                var angulrjsErrorList = document.getElementById('angulrjsErrorList');
+                var li = document.createElement("li");
+                li.appendChild(document.createTextNode(error))
+                angulrjsErrorList.appendChild(li);
+                break;
+
+                case 'Browser error':
+                var browserErrorList = document.getElementById('browserErrorList');
+                var li = document.createElement("li");
+                li.appendChild(document.createTextNode(error))
+                browserErrorList.appendChild(li);
+                break;
+
+
+
+            };
+        	
+
+
+        };
+
+
+
+
+        </script>
+    </head>
+    <body>
+        <input type="text" name="" id="inputErrBox" placeholder="Add new error">
+        <select name="" id="errorSelectList">
+            <option value="Native Js error">Native Js error</option>
+            <option value="AngularJs error" >AngularJs error</option>
+
+        <option value="Browser error">Browser error</options>
+    </select>
+    <input type="button" value="Add error" id="addErrBtn">
+    <input type="text" name="" id="inputCatBox" placeholder="Add new category">
+    <input type="button" value="Add Category" id="addCatBtn" >
+    <div id="errorList">
+     <h3>Native JS  Errors</h3>
+        <ul id="nativeJsErrorList">
+           
+        </ul>
+        <h3>AngularJS Errors</h3>
+        <ul id="angulrjsErrorList">
+            
+        </ul>
+        <h3>Browser Errors</h3>
+        <ul id="browserErrorList">
+            
+        </ul>
+    </div>
+</body>
+</html>
