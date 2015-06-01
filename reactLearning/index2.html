@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="bower_components/react/react.js"></script>
+    <script type="text/javascript" src="bower_components/react/JSXTransformer.js"></script>
+</head>
+<body>
+<div id="content"></div>
+
+
+<script type="text/jsx">
+var InputBox = React.createClass({
+  arr:[2,3,5,6,8,10],
+ getInitialState: function() {
+    return {value: 'Enter numbers'};
+  },
+  handleChange: function(event) {
+    this.setState({value: event.target.value});
+  },
+  render: function() {
+    var value = this.state.value;
+    var newArray = '';
+    if(this.state.newArray){
+      newArray =<p>{this.state.newArray}</p>;
+    }
+    return (
+    	<form onSubmit={this.submit}>
+    	<input type="text" value={value} ref="num1" onChange={this.handleChange} />
+    	<button type="submit">Enter</button>
+      {newArray}
+    	</form>
+      
+    	);
+
+   
+  },
+
+   submit:function(){
+   	var num1 = this.refs.num1.getDOMNode().value.trim();
+    	console.log(num1);
+      this.createNewArray(num1);
+/*      if(this.arr.indexOf(num1)!=-1){
+        arr.push(num1);
+      }
+      this.setState({newArray:this.arr},);*/
+    
+
+    },
+
+    createNewArray:function(num1){
+      var arrInput = [];
+      var input =num1;
+      console.log(input);
+      if(input.indexOf("-")!=-1){
+        console.log("inside if");
+        var firstNum = input.split("-")[0];
+        var secondNum = input.split("-")[1];
+        console.log(firstNum,secondNum);
+        while(firstNum<=secondNum){
+          arrInput.push(firstNum);
+          firstNum++;
+        };
+        console.log(arrInput);
+      }
+      else{
+        console.log("inside else");
+        var commaSplited = input.split(",");
+        for(var i=0;i<commaSplited.length;i++){
+          arrInput.push(commaSplited[i]);
+        }
+      }
+        this.mergeArrays(arrInput);
+
+    },
+
+    mergeArrays:function(arrInput){
+      console.log("inside mergeArrays",arrInput);
+      this.setState({newArray:this.arr.concat(arrInput)});
+      console.log(this.state.newArray);
+    }
+
+
+});	
+
+
+ React.render(
+        <InputBox />,
+        document.getElementById('content')
+
+
+
+        );
+
+
+
+</script>
+	
+</body>
+</html>
