@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="todoApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body ng-controller="mainCtrl">
+    <input type="text" name="" id="" placeholder="add Task" ng-model="task">
+    <input type="button" value="add Task" ng-click="addTask(task)">
+    
+        <div>
+            <h2>Task List</h2>
+            <ul id="taskList">
+                <li ng-repeat = "task in retriveTaskList">{{task}}</li>
+            </ul>
+        </div>    
+
+    <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="modules/app.js"></script>
+    <script type="text/javascript" src="controllers/mainCtrl.js"></script>
+    <script type="text/javascript" src="services/storageService.js"></script>
+    <script type="text/javascript" src="services/taskManager.js"></script>
+
+</body>
+</html>
