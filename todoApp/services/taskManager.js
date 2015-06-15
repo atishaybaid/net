@@ -1,5 +1,5 @@
 todoApp.service("taskManager", function (storageService) {
-var taskList = [];
+    var taskList = [];
     this.saveTask = function (task) {
         taskList = storageService.saveToStorage(task);
         return taskList;
