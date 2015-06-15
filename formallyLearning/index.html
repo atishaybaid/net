@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="formlyApp">
+<head >
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body ng-controller="mainCtrl as vm">
+   
+<formly-form model="vm.user" fields="vm.userFields" form="userForm">
+    <button type="submit" class="btn btn-primary" ng-disabled="vm.userForm.$invalid">Submit</button>
+</formly-form>
+   
+   
+   
+   
+   
+<script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="node_modules/api-check/dist/api-check.js"></script>
+<script type="text/javascript" src="node_modules/angular-formly/dist/formly.js"></script>
+
+<script type="text/javascript" src="node_modules/angular-formly-templates-bootstrap/dist/angular-formly-templates-bootstrap.js"></script>
+<script type="text/javascript" src="app.js"></script>
+<script type="text/javascript" src="mainCtrl.js"></script>      
+    
+        
+      
+</body>
+</html>
