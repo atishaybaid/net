@@ -1,0 +1,25 @@
+<<!DOCTYPE html>
+<html data-ng-app="myApp">
+<head>
+<script type="text/javascript" src="angular.js">
+</script>
+<script type="text/javascript" src="myApp.js"></script>
+	<title></title>
+</head>
+
+
+<body data-ng-controller="CountryCtrl">
+
+<input type="text" ng-model="firstNum">
+</input>
+
+
+<input type="text" ng-model="secondNum">
+</input>
+
+<input type="button" ng-click="sum()" value="sum"></input>
+
+<span>result:{{result}}</span>
+
+</body>
+</html>
