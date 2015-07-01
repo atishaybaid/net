@@ -1,4 +1,8 @@
-todoApp.service("taskManager", function (storageService) {
+define(['services/storageService'],function(){
+    
+
+
+function taskManager(storageService){
     var taskList = [];
     this.saveTask = function (task) {
         taskList = storageService.saveToStorage(task);
@@ -9,4 +13,12 @@ todoApp.service("taskManager", function (storageService) {
         return storageService.retriveFromStorage();
     };
 
+};
+
+   taskManager.$inject = ['storageService'];
+    
+    return taskManager;
+    
+    
+    
 });

@@ -1,4 +1,8 @@
-todoApp.service("storageService", function () {
+
+define([],function(){ 
+
+
+function storageService(){
     var taskList = []; 
     
     this.saveToStorage = function (task) {
@@ -18,4 +22,8 @@ todoApp.service("storageService", function () {
         };
     
 
-});
+};
+    return storageService;
+    
+    
+    });

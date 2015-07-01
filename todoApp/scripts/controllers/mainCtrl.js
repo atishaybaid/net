@@ -1,5 +1,11 @@
-todoApp.controller("mainCtrl", function mainCtrl($scope, taskManager) {
-    mainCtrl.$inject = ['$scope', 'taskManager'];
+
+define([],function(){
+    
+
+
+
+function mainCtrl($scope, taskManager) {
+   
 
     $scope.addTask = function (task) {
         $scope.retriveTaskList = taskManager.saveTask(task);
@@ -16,4 +22,9 @@ todoApp.controller("mainCtrl", function mainCtrl($scope, taskManager) {
 
 
 
+};
+    mainCtrl.$inject = ['$scope', 'taskManager'];
+    return mainCtrl;
+    
+    
 });
