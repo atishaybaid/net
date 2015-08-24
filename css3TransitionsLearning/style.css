@@ -1,0 +1,15 @@
+.move:hover {
+    transform: translate(350px,0) rotate(360deg);
+    -webkit-transform: translate(350px,350px) rotate(360deg); /** Chrome & Safari **/
+    -o-transform: translate(350px,0); /** Opera **/
+    -moz-transform: translate(350px,0); /** Firefox **/
+    font-size: 30px;
+}
+
+
+.text{
+    position: absolute;
+    font-size: 15px;
+    -webkit-transition:all 2s ease-in-out;
+    
+}

@@ -6,5 +6,6 @@ var myApp = angular.module('myApp', []);
   			var firstNum =parseInt($scope.firstNum);
   			var secondNum =parseInt($scope.secondNum);
   			$scope.result = firstNum+secondNum; 
+                    $scope.placeholder = 'doctors';
   				};
       });
