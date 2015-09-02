@@ -1,0 +1,22 @@
+.socialListLeft {
+    width: 40%;
+    float: left;
+}
+
+.socialListRight {
+    width: 40%;
+    float: right;
+}
+
+li {
+    display: block;
+    float: left;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.images {
+    display: block;
+}

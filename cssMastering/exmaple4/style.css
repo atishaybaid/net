@@ -1,0 +1,41 @@
+body {
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.75em;
+    color: #555f66;
+}
+
+header#topHeader {
+    height: 3em;
+    width: 100%;
+    background: #fff;
+    color: inherit;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+}
+
+header #logo {
+    font-size: 1.25em;
+}
+
+#logo>a {
+    font-size: inherit;
+    text-decoration: none;
+}
+
+header nav {
+    position: absolute;
+    top: 0;
+    right: 1.25em;
+}
+
+header nav ul {
+    list-style-type: none;
+}
+
+li {
+    display: inline-block;
+    padding-left: 1.25em;
+}
