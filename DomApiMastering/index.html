@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div id="first"></div>
+    <div id="second"></div>
+    <div id="third"></div>
+    <div>my Qualities are
+        <ul></ul>
+    </div>
+
+    <div id="captureEvent">fheshf</div>
+
+
+    </are>
+
+
+    <script>
+        document.getElementById('first').innerHTML = '<strong>Atishay</strong>';
+        document.getElementById('second').innerText = 'how are you';
+        document.getElementById('third').outerText = "hey";
+        var li = document.createElement('li');
+        li.innerText = 'Cricketer'
+        list = document.querySelector("ul");
+        list.appendChild(li);
+
+        window.addEventListener('click', function () {
+            console.log("window event occured");
+        }, true);
+
+        document.addEventListener('click', function () {
+            console.log("document event occured");
+        }, true);
+
+        document.documentElement.addEventListener('click', function () {
+            console.log("document Element event occured");
+        }, true);
+
+
+        document.querySelector("#captureEvent").addEventListener('click', function () {
+            console.log("div event occured");
+        }, true);
+    </script>
+
+</body>
+
+</html>
