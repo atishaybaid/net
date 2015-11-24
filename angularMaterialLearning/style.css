@@ -1,0 +1,23 @@
+p {
+  background-color: #ffffff;
+  color: #1A237E;
+}
+
+#cardContent{
+	padding: 0px;
+}
+ 
+md-card md-card-content {
+	padding: 0px 1px;
+}
+
+
+.title{
+	padding: 1px;
+	margin: 1px;
+}
+
+.commentText{
+	padding: 1px;
+	margin: 1px;
+}

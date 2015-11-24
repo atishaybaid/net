@@ -1,0 +1,24 @@
+<div flex="50" class="col-md-4">
+    <md-content>
+    <md-card  ng-repeat="moderateCommentCard in data">
+    <div id="cardArea">
+        <md-card-content layout="row">
+        <!-- <div id="cardIcon">
+            <img src="{{moderateCommentCard.">
+        </div> -->
+        <div id="cardContent" flex="50">
+            <h4 class="md-titile title">
+            {{moderateCommentCard.doneBy}}
+            </h4>
+            <p class="commentText">
+            {{moderateCommentCard.txt}}
+            </p>
+        </div>
+        <md-checkbox flex="25" ng-model="moderateCommentCard.tick" aria-label="Mark Abuse">
+        Report Abuse
+        </md-checkbox>
+        </md-card-content>
+    </div>
+    </md-card>
+    </md-content>
+</div>
