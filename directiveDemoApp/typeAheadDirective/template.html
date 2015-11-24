@@ -1,0 +1,8 @@
+<input type="text" ng-model="model" ng-keyup="checkKeyCode($event.keyCode)">
+{{model.length}}
+<div ng-hide="!trigger">
+
+<ul>
+<li ng-repeat="item in items | filter:filterQuery">{{item.name}}</li>	
+</ul>
+</div>

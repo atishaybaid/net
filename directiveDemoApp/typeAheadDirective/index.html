@@ -1,0 +1,26 @@
+<!DOCTYPE html >
+<html lang="en" ng-app="typeAheadDirectiveApp" >
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="node_modules/angular/angular.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	
+</head>
+<body ng-controller="mainCtrl">
+	
+	<type-ahead-directive items='items' mentio
+          mentio-typed-term="typedTerm"
+          mentio-require-leading-space="true"
+          class="editor form-control"
+          id="{{'htmlContent' + index}}"
+          ng-model="htmlContent" ></type-ahead-directive>
+          <mentio-menu ng-if="index"
+          mentio-for="'htmlContent' + index"
+          mentio-trigger-char="'@'"
+          mentio-items="people"
+          mentio-search="searchPeople(term)"
+          mentio-select="getPeopleText(item)"
+      ></mentio-menu>
+</body>
+</html>
