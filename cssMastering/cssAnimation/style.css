@@ -1,0 +1,42 @@
+@keyframes square-to-circle{
+    o%{
+        border-radius: 0 0 0 0;
+        transform:rotate(0deg);
+       }
+    25%{
+        border-radius: 50% 0 0 0;
+        transform:rotate(0deg);
+
+    }
+
+    50%{
+        border-radius: 50% 50% 0 0;
+        transform:rotate(0deg);
+
+    }
+
+    75%{
+        border-radius: 50% 50% 50% 0;
+        transform:rotate(0deg);
+
+    }
+
+
+    100%{
+        border-radius: 50% 50% 50% 50%;
+        transform:rotate(0deg);
+
+    }
+
+
+}
+
+.square{
+    width:200px;
+    height: 200px;
+    border: 1px solid black;
+    background-color: red;
+    animation: square-to-circle 2s 1s infinite  alternate;
+
+};
+

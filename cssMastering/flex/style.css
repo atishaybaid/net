@@ -1,0 +1,13 @@
+.parent{
+    flex-flow:row wrap;
+    background-color: blue;
+    display:flex;
+    justify-content:space-around;
+}
+
+.child1{
+    width: 300px;
+    height:100px;
+    background-color: red;
+    //margin: auto;
+}
