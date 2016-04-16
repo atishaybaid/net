@@ -1,18 +1,21 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html data-ng-app="myApp">
 <head>
-<script type="text/javascript" src="angular.js">
-</script>
-<script type="text/javascript" src="myApp.js"></script>
-<script type="text/javascript" src="directive.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
-	<title></title>
+    <script type="text/javascript" src="angular.js">
+    </script>
+    <script src="bower_components/angular-rangeslider/angular.rangeSlider.js"></script>
+    <script type="text/javascript" src="myApp.js"></script>
+    <script type="text/javascript" src="directive.js"></script>
+
+   <link rel="stylesheet" href="bower_components/angular-rangeslider/angular.rangeSlider.css">
+    	<title></title>
 </head>
 
 
 <body data-ng-controller="CountryCtrl">
+<div range-slider min="0" max="100" model-min="min" model-max="max"></div>
 
-<input type="text" ng-model="firstNum">
+ <input type="text" ng-model="firstNum">
 </input>
 
 
@@ -22,7 +25,7 @@
 <input type="button" ng-click="sum()" value="sum"></input>
 
 <span>result:{{result}}</span>
-<spl-input></spl-input>
+
 
 </body>
 </html>
