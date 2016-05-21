@@ -1,15 +1,13 @@
-#include <iostream>
+#include<iostream>
+using namespace std;
+ 
+
 
 int main(){
-std::cout<<"Enter a number";
-int x = 0;
-
-std::cin>>x;
-std::cout<<"You have enterde"<<x;
-
-return 0;
-
-
-
-
+   
+    int x,y;
+    cout<<"Size of int \t"<<sizeof(char);
+   
+    return 0;
+    
 }
