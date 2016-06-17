@@ -8,7 +8,7 @@ int main(){
   string s;
  cin>>n;
  cin>>s;
- cout<<2*n<<enld;
+ cout<<2*n<<endl;
  cout<<s;
- 
+
 }

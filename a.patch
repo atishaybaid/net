@@ -1,0 +1,27 @@
+diff --git a/cpp/hackerEarth/io.cpp b/cpp/hackerEarth/io.cpp
+index 0e3212b..be05676 100644
+--- a/cpp/hackerEarth/io.cpp
++++ b/cpp/hackerEarth/io.cpp
+@@ -8,7 +8,7 @@ int main(){
+   string s;
+  cin>>n;
+  cin>>s;
+- cout<<2*n<<enld;
++ cout<<2*n<<endl;
+  cout<<s;
+- 
++
+ }
+\ No newline at end of file
+diff --git a/react-router-tutorial b/react-router-tutorial
+--- a/react-router-tutorial
++++ b/react-router-tutorial
+@@ -1 +1 @@
+-Subproject commit 2d08680eca5af168e103cc4d0087b827076734de
++Subproject commit 2d08680eca5af168e103cc4d0087b827076734de-dirty
+diff --git a/reactLearning/react-tutorial b/reactLearning/react-tutorial
+--- a/reactLearning/react-tutorial
++++ b/reactLearning/react-tutorial
+@@ -1 +1 @@
+-Subproject commit 2be1a2d6999b8f47c34e52e5a5b05bd6713343fc
++Subproject commit 2be1a2d6999b8f47c34e52e5a5b05bd6713343fc-dirty

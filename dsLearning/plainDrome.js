@@ -1,0 +1,3 @@
+function chkPlainDrome(str){
+
+}
