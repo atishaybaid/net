@@ -27,5 +27,9 @@
 <span>result:{{result}}</span>
 
 
+<div ng-repeat="item in radioList">
+    <input type="radio" name="radio-btn" ng-value="item.value" ng-model="game.val">{{item.value}}
+</div>
+
 </body>
 </html>
